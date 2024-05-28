@@ -11,7 +11,6 @@ function App() {
           <div className='flex gap-2'>
             <p className='text-gray-600'>New to Fnatic?</p>
             <a href="" className='text-black-900'>Signup</a>
-            {/* Use the Logo as an img source */}
           </div>
         </div>
 
@@ -25,10 +24,14 @@ function App() {
 
         <div className="btns">
           <div className='flex gap-6 mt-8'>
-            <button className='w-16 h-12 rounded-md border border-slate-200'>Hello</button>
-            <button className='w-16 h-12 rounded-md border border-slate-200'>Hello</button>
-            <button className='w-16 h-12 rounded-md border border-slate-200'>Hello</button>
-            <button className='w-16 h-12 rounded-md border border-slate-200'>Hello</button>
+            <button className="google w-16 h-12 rounded-md border border-slate-200 bg-[url('./svgs/google.svg')] bg-no-repeat bg-center">
+            </button>
+            <button className="google w-16 h-12 rounded-md border border-slate-200 color-red bg-[url('./svgs/twitch.svg')] bg-no-repeat bg-center bg-violet-500">
+            </button>
+            <button className="google w-16 h-12 rounded-md border border-slate-200 bg-[url('./svgs/twitter.svg')] bg-no-repeat bg-center bg-sky-500">
+            </button>
+            <button className="google w-16 h-12 rounded-md border border-slate-200 bg-[url('./svgs/google.svg')] bg-no-repeat bg-center">
+            </button>
           </div>
         </div>
       </div>
