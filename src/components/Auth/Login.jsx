@@ -2,9 +2,11 @@ import React from 'react'
 import { useState } from 'react'
 import Logo from '../../svgs/Logo.svg'
 import '../../fonts.css'
+import Footer from '../Footer/Footer'
+
 
 const Login = () => {
-  
+
     const [data,setData] = useState({
         email : '',
         password : ''
@@ -20,7 +22,7 @@ const Login = () => {
         // console.log(data);
     }
 
-  return (
+  return (  
     <>
     <div className="main w-full h-full flex justify-center">
       {/* signup text */}
@@ -80,10 +82,10 @@ const Login = () => {
             <a className='text-gray-400 text-center font-semibold'>Forgot your password?</a>
         </div>
 
-        <div className='w-full h-96 bg-red-50'></div>
-
+        {/* <div className='w-full h-96 bg-red-50'></div> */}
       </div>
     </div>
+      <Footer></Footer>
     </>
   );
 }
