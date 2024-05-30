@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import Logo from '../../svgs/Logo.svg';
 import '../../fonts.css';
+import axios from 'axios'
 
 const SignUp = () => {
   
@@ -22,13 +22,14 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(data); // Debugging: Check data state
+    // const BASE_URL = process.env.REACT_APP_BASE_URL;
     try {
-      const response = await axios.post('https://fnatic-gamma.vercel.app/api/v1/users/register', {
+      const response = await axios.post( `https://fnatic-gamma.vercel.app/api/v1/users/register` , {
         username: data.username,
         email: data.email,
         password: data.password,
       });
-      console.log(response.data); // Debugging: Check API response
+      console.log(response.data);
     } catch (error) {
       console.error('An error occurred:', error.response ? error.response.data : error.message); // Debugging: Check error details
     }
