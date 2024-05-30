@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className='flex flex-col gap-8 w-full h-ful'>
       <Category></Category>
-      <div className='w-full h-96 p-4 lg:p-0'>
+      {/* <div className='w-full h-96 p-4 lg:p-0'>
         <div className='relative bg-black h-96 z-0 rounded rounded-lg max-h-96'>
           <div className='absolute inset-0 overflow-hidden z-10'>
             <video className='w-full h-96 object-cover z-10 rounded-sm object-bottom' autoPlay loop muted>
@@ -13,7 +13,8 @@ const Home = () => {
             </video>
           </div>
         </div>
-      </div>
+      </div> */}
+      
     </div>
   );
 }

@@ -37,7 +37,7 @@ const Category = () => {
   return (
     <div>
       <div className='flex justify-center p-4'>
-        <div className='flex gap-8 scroll-smooth overflow-x-auto'>
+        <div className='flex gap-10 scroll-smooth overflow-x-auto'>
             {
               urls.map( (item,index) => (
                 <div className='flex flex-col flex-shrink-0 gap-1 justify-center items-center'>

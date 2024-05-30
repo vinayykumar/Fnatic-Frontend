@@ -25,11 +25,15 @@ const Login = () => {
       const response = await axios.post('https://fnatic-gamma.vercel.app/api/v1/users/login', {
         email: data.email,
         password: data.password
-      });
+      }
+      // ,{
+      //   withCredentials : true
+      // }
+    );
       console.log(response.data);
     } catch (error) {
       // console.error('An error occurred:', error.response ? error.response.data : error.message);
-      -console.log(error);
+      console.log(error);
     }
   };
 
@@ -75,6 +79,7 @@ const Login = () => {
             <div className='w-36 h-0.5 bg-slate-200'></div>
           </div>
 
+          {/* INPUTS */}
           <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-6 inputs w-full">
             <div>
               <p className='text-gray-800 text-sm'>Email</p>

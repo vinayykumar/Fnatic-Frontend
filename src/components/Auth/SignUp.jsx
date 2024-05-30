@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Logo from '../../svgs/Logo.svg';
 import '../../fonts.css';
 import axios from 'axios'
+import Footer from '../Footer/Footer';
 
 const SignUp = () => {
   
@@ -36,6 +37,7 @@ const SignUp = () => {
   };
 
   return (
+    <>
     <div className="main w-full h-full flex justify-center">
       <div className="max-w-100 flex flex-col items-center justify-center p-4">
         <div>
@@ -73,7 +75,7 @@ const SignUp = () => {
               placeholder='Your email address'
               value={data.email}
               onChange={handleChange}
-            />
+              />
           </div>
           <div>
             <p className='text-gray-800 text-sm'>Password</p>
@@ -84,14 +86,15 @@ const SignUp = () => {
               placeholder='Your Password'
               value={data.password}
               onChange={handleChange}
-            />
+              />
           </div>
           <button type="submit" className='w-full h-14 bg-black text-white border rounded-md hover:opacity-80'>SignUp</button>
         <a className='text-gray-400 text-center font-semibold'>Forgot your password?</a>
         </form>
-        <div className='w-full h-96 bg-red-50'></div>
       </div>
     </div>
+      <Footer></Footer>
+      </>
   );
 }
 
