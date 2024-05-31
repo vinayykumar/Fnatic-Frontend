@@ -4,6 +4,7 @@ import Logo from '../../svgs/Logo.svg';
 import '../../fonts.css';
 import axios from 'axios'
 import Footer from '../Footer/Footer';
+import { NavLink } from 'react-router-dom';
 
 const SignUp = () => {
 
@@ -48,7 +49,7 @@ const SignUp = () => {
         <div>
           <div className='flex gap-2 float-right'>
             <p className='text-gray-600'>Already a Fnatic?</p>
-            <a href="" className='text-black-900 underline underline-offset-1'>Log In</a>
+            <NavLink to='/login' className='text-black-900 underline underline-offset-1'>Log In</NavLink>
           </div>
         </div>
         <div className='mt-10'>

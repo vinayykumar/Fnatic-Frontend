@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -24,11 +25,11 @@ const Navbar = () => {
                 <div className="hidden lg:block w-5 h-16 bg-[url('./svgs/search_icon.svg')] bg-no-repeat bg-center"></div>
                 <div className="w-4 h-20 lg:w-5 bg-[url('./svgs/cart_icon.svg')] bg-no-repeat bg-center"></div>
                 <div className=" w-6 h-20 lg:w-7 bg-[url('./svgs/profile_icon.svg')] bg-no-repeat bg-center"></div>
-                <div className='flex items-center justify-center hidden md:block w-20 h-10 p-2 border border-gray-300 rounded rounded-md'>
-                    <p className='text-center'>Log In</p>
+                <div className='flex items-center justify-center hidden md:block w-20 h-10 p-2 border border-gray-300 rounded rounded-md text-center'>
+                    <NavLink to='/login' className='text-center'>Login</NavLink>
                 </div>
-                <div className='flex items-center justify-center hidden md:block w-20 h-10 p-2 bg-black rounded rounded-md'>
-                    <p className='text-white text-sm ml-1 mt-0.5'>Sign Up</p>
+                <div className='flex items-center justify-center hidden md:block w-20 h-10 p-2 bg-black rounded rounded-md text-center'>
+                    <NavLink to='/signup' className='text-center text-white text-sm'>Sign Up</NavLink>
                 </div>
             </div>
         </div>

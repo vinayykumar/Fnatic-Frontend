@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter,Routes,Route } from "react-router-dom"
 import './index.css';
 import Login from './components/Auth/Login'
-import SignUp from './components/Auth/SignUp'
+import SignUp from './components/Auth/SignUp' 
 import Home from './components/Home/Home';
 import Layout from './components/Layout/Layout';
 import Verification from './components/Auth/Verification'
