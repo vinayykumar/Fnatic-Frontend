@@ -22,7 +22,8 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(data); // Debugging: Check data state
+    console.log(data); 
+    localStorage.setItem('email',data.email);
     // const BASE_URL = process.env.REACT_APP_BASE_URL;
     try {
       const response = await axios.post( `https://fnatic-gamma.vercel.app/api/v1/users/register` , {

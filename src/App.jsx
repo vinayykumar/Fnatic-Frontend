@@ -6,6 +6,7 @@ import SignUp from './components/Auth/SignUp'
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Layout from './components/Layout/Layout';
+import Verification from './components/Auth/Verification'
 
 function App() {
 return (<>
@@ -14,6 +15,7 @@ return (<>
 
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<SignUp/>} />
+        <Route path="/verification" element={<Verification/>} />
         
         <Route path='/' element={<Layout><Home/></Layout>}/>
 
