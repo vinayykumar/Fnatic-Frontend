@@ -30,8 +30,9 @@ const Verification = () => {
   const handleSubmit = async (e) => {
     const otpString = otp.join("");
     const user_email = localStorage.getItem('email');
-    console.log("OTP entered: ", otpString);
-    console.log("user email", user_email  );
+    localStorage.removeItem('email');
+    // console.log("OTP entered: ", otpString);
+    // console.log("user email", user_email  );
     e.preventDefault();
     try {
       const response = await axios.post('https://fnatic-gamma.vercel.app/api/v1/users/verification', {
