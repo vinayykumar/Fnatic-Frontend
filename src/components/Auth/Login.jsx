@@ -3,6 +3,7 @@ import axios from 'axios';
 import Logo from '../../svgs/Logo.svg';
 import '../../fonts.css';
 import Footer from '../Footer/Footer';
+import { NavLink } from 'react-router-dom';
 
 const Login = () => {
   const [data, setData] = useState({
@@ -20,7 +21,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(data); 
+    // console.log(data); 
     try {
       const response = await axios.post('https://fnatic-gamma.vercel.app/api/v1/users/login', {
         email: data.email,
@@ -45,7 +46,7 @@ const Login = () => {
           <div>
             <div className='flex gap-2 float-right'>
               <p className='text-gray-600'>New to Fnatic?</p>
-              <a href="" className='text-black-900 underline underline-offset-1'>Sign up</a>
+              <NavLink to='/signup' className='text-black-900 underline underline-offset-1'>Sign Up</NavLink>
             </div>
           </div>
 

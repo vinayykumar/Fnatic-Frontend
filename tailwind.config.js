@@ -6,11 +6,6 @@ export default {
   ],
   theme: {
    
-      fontFamily:{
-        druk:["Druk Wide Web Bold Regular",'Poppins','sans-serif'],
-      },
-       
-
     extend: {
       keyframes: {
         "accordion-down": {
@@ -26,7 +21,12 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-    
+
+      fontFamily: {
+        sans: ['helvetica-now-medium', 'ui-sans-serif', 'system-ui'],
+        druk:["Druk Wide Web Bold Regular",'Poppins','sans-serif'],
+      }
+
     },
   },
   plugins: [],

@@ -26,7 +26,7 @@ const Category = () => {
       url : "https://cdn.sanity.io/images/5gii1snx/production/1e1e44cbe878d8a7bfc52b7991e8344da6685369-1080x1080.svg",
       category : "Apparel"
     },{
-      url : "https://cdn.sanity.io/images/5gii1snx/production/1e1e44cbe878d8a7bfc52b7991e8344da6685369-1080x1080.svg",
+      url : "https://cdn.sanity.io/images/5gii1snx/production/a69fff12420a16ec6a3f8c5be97752035b9c7137-1080x1080.svg",
       category : "Accessories"
     },{
       url : "https://cdn.sanity.io/images/5gii1snx/production/0ab3d301609db4979cb7a9e6315afbe2f825f712-1080x1080.svg",
@@ -37,7 +37,7 @@ const Category = () => {
   return (
     <div>
       <div className='flex justify-center p-4'>
-        <div className='flex gap-10 scroll-smooth overflow-x-auto'>
+        <div className='flex gap-10 scroll-smooth  overflow-x-auto '>
             {
               urls.map( (item,index) => (
                 <div className='flex flex-col flex-shrink-0 gap-1 justify-center items-center'>
@@ -46,7 +46,6 @@ const Category = () => {
                 </div>
               ))
             }
-
         </div>
       </div>
     </div>

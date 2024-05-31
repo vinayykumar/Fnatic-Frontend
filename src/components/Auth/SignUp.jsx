@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Logo from '../../svgs/Logo.svg';
 import '../../fonts.css';
 import axios from 'axios'
 import Footer from '../Footer/Footer';
+import { NavLink } from 'react-router-dom';
 
 const SignUp = () => {
+
+  const navigate = useNavigate();
   
   const [data, setData] = useState({
     username: "",
@@ -22,7 +26,8 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(data); // Debugging: Check data state
+    // console.log(data); 
+    localStorage.setItem('email',data.email);
     // const BASE_URL = process.env.REACT_APP_BASE_URL;
     try {
       const response = await axios.post( `https://fnatic-gamma.vercel.app/api/v1/users/register` , {
@@ -30,9 +35,10 @@ const SignUp = () => {
         email: data.email,
         password: data.password,
       });
-      console.log(response.data);
+      // console.log(response.data);
+      navigate('/verification')
     } catch (error) {
-      console.error('An error occurred:', error.response ? error.response.data : error.message); // Debugging: Check error details
+      console.error('An error occurred:', error.response ? error.response.data : error.message);
     }
   };
 
@@ -43,7 +49,7 @@ const SignUp = () => {
         <div>
           <div className='flex gap-2 float-right'>
             <p className='text-gray-600'>Already a Fnatic?</p>
-            <a href="" className='text-black-900 underline underline-offset-1'>Log In</a>
+            <NavLink to='/login' className='text-black-900 underline underline-offset-1'>Log In</NavLink>
           </div>
         </div>
         <div className='mt-10'>
@@ -89,7 +95,6 @@ const SignUp = () => {
               />
           </div>
           <button type="submit" className='w-full h-14 bg-black text-white border rounded-md hover:opacity-80'>SignUp</button>
-        <a className='text-gray-400 text-center font-semibold'>Forgot your password?</a>
         </form>
       </div>
     </div>
