@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Category from '../Home/Category/Category'
 import { Rating } from '@material-tailwind/react'
 
+import Sidebar from './Sidebar/TechSpecSidebar'
+import ShippingSidebar from './Sidebar/ShippingSidebar'
+
 const Product = () => {
+const [showTech, setShowTech] = useState(false)
+const [showShipping, setShowShipping] = useState(false)
  const urls = [
     {   
         id: 1,
@@ -67,8 +72,16 @@ const ProductDetails = {
 
 
 }
-
-
+const toggleTech = () => {
+     setShowTech(!showTech)
+}
+const toggleShipping = () => {  
+    setShowShipping(!showShipping)
+}
+const handleClose = () => {
+    setShowTech(false)
+    setShowShipping(false)
+}
   return (
     <>
      <Category/>
@@ -108,15 +121,17 @@ const ProductDetails = {
         <p className='text-gray-600 text-sm mb-6 mt-6 whitespace-pre-line'>
             {ProductDetails.Description}
         </p>
-        <button className='cursor-pointer flex flex-row justify-between m-3 text-base font-semibold' >
+        <button className='cursor-pointer flex flex-row justify-between m-3 text-base font-semibold' onClick={toggleTech} >
             <p>Technical Specifications</p>
             <p>+</p>
         </button>
+        {showTech && (<Sidebar data={ProductDetails} close={handleClose} photo={urls}/>)}
         <hr></hr>
-        <button className='flex flex-row justify-between cursor-pointer m-3 bold text-base font-semibold'>
+        <button className='flex flex-row justify-between cursor-pointer m-3 bold text-base font-semibold' onClick={toggleShipping}  onBlur={(()=>setShowTech(false))}>
             <p>Shipping & Returns</p>
             <p>+</p>
         </button>
+        {showShipping && (<ShippingSidebar data={ProductDetails} close={handleClose}/>)}
         <hr></hr>
         <div className='flex flex-row align-center border border-gray-200 text-left text-sm p-4 m-1 rounded-md mt-9'>
             <img src="https://cdn.sanity.io/images/5gii1snx/production/c1a8febaf045ae70290ac4200fb76c05e2dfc679-20x18.svg" alt="Support" className='w-6 h-6 m-1' />

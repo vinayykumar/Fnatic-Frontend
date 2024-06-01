@@ -7,6 +7,7 @@ import Home from './components/Home/Home';
 import Layout from './components/Layout/Layout';
 import Product from './components/Product/Product';
 import Verification from './components/Auth/Verification'
+import Sidebar from './components/Product/Sidebar/TechSpecSidebar';
 
 
 function App() {
@@ -20,6 +21,7 @@ return (<>
         
         <Route path='/' element={<Layout><Home/></Layout>}/>
         <Route path='/product' element={<Layout><Product/></Layout>}/>
+        <Route path='/sidebar' element={<Sidebar/>}/>
 
       </Routes>
     </BrowserRouter>
