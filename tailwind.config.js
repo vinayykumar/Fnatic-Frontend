@@ -29,6 +29,7 @@ export default {
       fontFamily: {
         sans: ['helvetica-now-medium', 'ui-sans-serif', 'system-ui'],
         druk:["Druk Wide Web Bold Regular",'Poppins','sans-serif'],
+      
       }
 
     },
