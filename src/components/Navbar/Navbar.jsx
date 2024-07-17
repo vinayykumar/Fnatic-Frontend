@@ -10,7 +10,10 @@ const Navbar = () => {
             <div className="left flex flex-row items-center gap-8">
                 <div className="lg:hidden w-4 h-16 bg-[url('./svgs/menu_icon.svg')] bg-no-repeat bg-center"></div>
                 <div className="lg:hidden w-5 h-16 bg-[url('./svgs/search_icon.svg')] bg-no-repeat bg-center"></div>
-                <div className="hidden lg:block w-10 h-10 lg:w-12 lg:h-12 bg-[url('./svgs/Logo.svg')] bg-no-repeat bg-center "></div>
+                <NavLink to='/' className='text-center'>
+                    <div className="hidden lg:block w-10 h-10 lg:w-12 lg:h-12 bg-[url('./svgs/Logo.svg')] bg-no-repeat bg-center ">
+                    </div>
+                 </NavLink>
                 <div className='hidden lg:block'>Products</div>
                 <div className='hidden lg:block'>Community</div>
             </div>

@@ -53,7 +53,9 @@ const SignUp = () => {
           </div>
         </div>
         <div className='mt-10'>
-          <img src={Logo} alt="Logo" className="w-14 h-14" />
+            <NavLink to='/' className='text-center'>
+              <img src={Logo} alt="Logo" className="w-14 h-14" />
+            </NavLink>
         </div>
         <div>
           <h1 style={{ fontFamily: 'DrukeWide' }} className='mt-4 text-xl md:text-2xl'>SIGN UP TO FNATIC ID</h1>

@@ -18,7 +18,6 @@ return (<>
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/verification" element={<Verification/>} />
-        
         <Route path='/' element={<Layout><Home/></Layout>}/>
         <Route path='/product' element={<Layout><Product/></Layout>}/>
         <Route path='/sidebar' element={<Sidebar/>}/>

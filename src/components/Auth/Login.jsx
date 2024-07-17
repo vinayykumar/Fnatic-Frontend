@@ -52,7 +52,9 @@ const Login = () => {
 
           {/* Logo */}
           <div className='mt-10'>
-            <img src={Logo} alt="Logo" className="w-14 h-14" />
+            <NavLink to='/' className='text-center'>
+              <img src={Logo} alt="Logo" className="w-14 h-14" />
+            </NavLink>
           </div>
 
           {/* Login para */}
