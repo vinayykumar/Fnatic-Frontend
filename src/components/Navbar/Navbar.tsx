@@ -1,7 +1,5 @@
 import React,{ useContext } from 'react'
 import { NavLink } from 'react-router-dom'
-import { useAuth } from '../../context/AppContext';
-const { isLoggedIn } = useAuth();
 
 const Navbar = () => {
   return (
@@ -29,9 +27,9 @@ const Navbar = () => {
             <div className="right flex flex-row items-center gap-5">
                 <div className="hidden lg:block w-5 h-16 bg-[url('./svgs/search_icon.svg')] bg-no-repeat bg-center"></div>
 
-                {isLoggedIn && <div className="w-4 h-20 lg:w-5 bg-[url('./svgs/cart_icon.svg')] bg-no-repeat bg-center"></div>}
+                <div className="w-4 h-20 lg:w-5 bg-[url('./svgs/cart_icon.svg')] bg-no-repeat bg-center"></div>
                 
-                {isLoggedIn && <div className=" w-6 h-20 lg:w-7 bg-[url('./svgs/profile_icon.svg')] bg-no-repeat bg-center"></div> }
+                <div className=" w-6 h-20 lg:w-7 bg-[url('./svgs/profile_icon.svg')] bg-no-repeat bg-center"></div>
                 
                 <div className='flex items-center justify-center hidden md:block w-20 h-10 p-2 border border-gray-300 rounded rounded-md text-center'>
                     <NavLink to='/login' className='text-center'>Login</NavLink>

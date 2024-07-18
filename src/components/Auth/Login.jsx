@@ -6,8 +6,10 @@ import Logo from '../../svgs/Logo.svg';
 import '../../fonts.css';
 import Footer from '../Footer/Footer';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from "../../context/AppContext";
 
 const Login = () => {
+  const { setIsLoggedIn } = useAuth();
   const [data, setData] = useState({
     email: '',
     password: ''
@@ -15,12 +17,12 @@ const Login = () => {
 
   const handleEmailLogin = async () => {
     try {
-      await signInWithEmailAndPassword(auth, data.email, data.password);
+      await signInWithEmailAndPassword(auth, data.email, data.password);   
     } catch (error) {
       console.error("Error logging in: ", error);
     }
   };
-
+  
   const handleGoogleLogin = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
