@@ -8,7 +8,7 @@ import Layout from './components/Layout/Layout';
 import Product from './components/Product/Product';
 import Verification from './components/Auth/Verification'
 import Sidebar from './components/Product/Sidebar/TechSpecSidebar';
-
+import {AppContext} from './context/Context'
 
 function App() {
 return (<>

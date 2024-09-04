@@ -1,35 +1,32 @@
 import React, { useState } from 'react';
-// import axios from 'axios';
-import { auth, googleProvider } from '../../../firebase/firebaseConfig';
-import { signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
+// import { auth, googleProvider } from '../../../firebase/firebaseConfig';
+// import { signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
 import Logo from '../../svgs/Logo.svg';
 import '../../fonts.css';
 import Footer from '../Footer/Footer';
 import { NavLink } from 'react-router-dom';
-import { useAuth } from "../../context/AppContext";
 
 const Login = () => {
-  const { setIsLoggedIn } = useAuth();
   const [data, setData] = useState({
     email: '',
     password: ''
   });
 
-  const handleEmailLogin = async () => {
-    try {
-      await signInWithEmailAndPassword(auth, data.email, data.password);   
-    } catch (error) {
-      console.error("Error logging in: ", error);
-    }
-  };
+  // const handleEmailLogin = async () => {
+  //   try {
+  //     await signInWithEmailAndPassword(auth, data.email, data.password);   
+  //   } catch (error) {
+  //     console.error("Error logging in: ", error);
+  //   }
+  // };
   
-  const handleGoogleLogin = async () => {
-    try {
-      await signInWithPopup(auth, googleProvider);
-    } catch (error) {
-      console.error("Error logging in: ", error);
-    }
-  };
+  // const handleGoogleLogin = async () => {
+  //   try {
+  //     await signInWithPopup(auth, googleProvider);
+  //   } catch (error) {
+  //     console.error("Error logging in: ", error);
+  //   }
+  // };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,24 +36,24 @@ const Login = () => {
     }));
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   // console.log(data); 
-  //   try {
-  //     const response = await axios.post('https://fnatic-gamma.vercel.app/api/v1/users/login', {
-  //       email: data.email,
-  //       password: data.password
-  //     }
-  //     // ,{
-  //     //   withCredentials : true
-  //     // }
-  //   );
-  //     console.log(response.data);
-  //   } catch (error) {
-  //     // console.error('An error occurred:', error.response ? error.response.data : error.message);
-  //     console.log(error);
-  //   }
-  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // console.log(data); 
+    try {
+      const response = await axios.post('https://fnatic-gamma.vercel.app/api/v1/users/login', {
+        email: data.email,
+        password: data.password
+      }
+      // ,{
+      //   withCredentials : true
+      // }
+    );
+      console.log(response.data);
+    } catch (error) {
+      // console.error('An error occurred:', error.response ? error.response.data : error.message);
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -85,7 +82,9 @@ const Login = () => {
           {/* Social buttons */}
           <div className="btns">
             <div className='flex gap-8 mt-6'>
-              <button className="google w-16 h-12 rounded-md border border-slate-200 bg-[url('./svgs/google.svg')] bg-no-repeat bg-center" onClick={handleGoogleLogin}>
+              <button className="google w-16 h-12 rounded-md border border-slate-200 bg-[url('./svgs/google.svg')] bg-no-repeat bg-center" 
+              // onClick={handleGoogleLogin}
+              >
               </button>
               <button className="google w-16 h-12 rounded-md border border-slate-200 bg-[url('./svgs/discord.svg')] bg-no-repeat bg-center bg-blue-500">
               </button>
@@ -103,7 +102,7 @@ const Login = () => {
           </div>
 
           {/* INPUTS */}
-          <form onSubmit={handleEmailLogin} className="mt-6 flex flex-col gap-6 inputs w-full">
+          <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-6 inputs w-full">
             <div>
               <p className='text-gray-800 text-sm'>Email</p>
               <input

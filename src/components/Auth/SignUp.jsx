@@ -5,7 +5,7 @@ import '../../fonts.css';
 import axios from 'axios'
 import Footer from '../Footer/Footer';
 import { NavLink } from 'react-router-dom';
-import { emailSignUp, googleSignIn } from '../../../firebase/firebaseAuth';
+// import { emailSignUp, googleSignIn } from '../../../firebase/firebaseAuth';
 
 const SignUp = () => {
 
@@ -17,25 +17,25 @@ const SignUp = () => {
     password: ""
   });
 
-  const handleEmailSignUp = async () => {
-    try {
-      await emailSignUp(data.email, data.password);
-      alert("Sign up successful!");
-    } catch (error) {
-      console.error("Error signing up with email and password", error);
-      alert("Sign up failed. Please try again.");
-    }
-  };
+  // const handleEmailSignUp = async () => {
+  //   try {
+  //     await emailSignUp(data.email, data.password);
+  //     alert("Sign up successful!");
+  //   } catch (error) {
+  //     console.error("Error signing up with email and password", error);
+  //     alert("Sign up failed. Please try again.");
+  //   }
+  // };
 
-  const handleGoogleSignUp = async () => {
-    try {
-      await googleSignIn();
-      alert("Google sign up successful!");
-    } catch (error) {
-      console.error("Error signing up with Google", error);
-      alert("Google sign up failed. Please try again.");
-    }
-  };
+  // const handleGoogleSignUp = async () => {
+  //   try {
+  //     await googleSignIn();
+  //     alert("Google sign up successful!");
+  //   } catch (error) {
+  //     console.error("Error signing up with Google", error);
+  //     alert("Google sign up failed. Please try again.");
+  //   }
+  // };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,23 +45,23 @@ const SignUp = () => {
     }));
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   // console.log(data); 
-  //   localStorage.setItem('email',data.email);
-  //   // const BASE_URL = process.env.REACT_APP_BASE_URL;
-  //   try {
-  //     const response = await axios.post( `https://fnatic-gamma.vercel.app/api/v1/users/register` , {
-  //       username: data.username,
-  //       email: data.email,
-  //       password: data.password,
-  //     });
-  //     // console.log(response.data);
-  //     navigate('/verification')
-  //   } catch (error) {
-  //     console.error('An error occurred:', error.response ? error.response.data : error.message);
-  //   }
-  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // console.log(data); 
+    localStorage.setItem('email',data.email);
+    // const BASE_URL = process.env.REACT_APP_BASE_URL;
+    try {
+      const response = await axios.post( `https://fnatic-gamma.vercel.app/api/v1/users/register` , {
+        username: data.username,
+        email: data.email,
+        password: data.password,
+      });
+      // console.log(response.data);
+      navigate('/verification')
+    } catch (error) {
+      console.error('An error occurred:', error.response ? error.response.data : error.message);
+    }
+  };
 
   return (
     <>
@@ -83,7 +83,9 @@ const SignUp = () => {
         </div>
         <div className="btns">
           <div className='flex gap-8 mt-6'>
-            <button className="w-16 h-12 rounded-md border border-slate-200 bg-[url('./svgs/google.svg')] bg-no-repeat bg-center" onClick={handleGoogleSignUp}></button>
+            <button className="w-16 h-12 rounded-md border border-slate-200 bg-[url('./svgs/google.svg')] bg-no-repeat bg-center" 
+            // onClick={handleGoogleSignUp}
+            ></button>
             <button className="w-16 h-12 rounded-md border border-slate-200 bg-[url('./svgs/discord.svg')] bg-no-repeat bg-center bg-blue-500"></button>
             <button className="w-16 h-12 rounded-md border border-slate-200 bg-[url('./svgs/twitter.svg')] bg-no-repeat bg-center bg-sky-500"></button>
             <button className="w-16 h-12 rounded-md border border-slate-200 color-red bg-[url('./svgs/twitch.svg')] bg-no-repeat bg-center bg-violet-500"></button>
@@ -94,7 +96,7 @@ const SignUp = () => {
           <p className='text-gray-500 sm:text-sm md:text-md lg:text-md'>OR</p>
           <div className='w-36 h-0.5 bg-slate-200'></div>
         </div>
-        <form onSubmit={handleEmailSignUp} className="mt-6 flex flex-col gap-6 inputs w-full">
+        <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-6 inputs w-full">
           <div>
             <p className='text-gray-800 text-sm'>Email</p>
             <input
